@@ -16,14 +16,14 @@ try {
         WHERE item_id = :id");
 
     $stmt->execute([
-        ':name' => 'Green Apple',
-        ':category' => 'Fruits',
-        ':supplier' => 'Fruit Nest',
-        ':price' => 38.00,
-        ':quantity' => 100,
-        ':expiry' => '2025-11-30',
-        ':discount' => 0.00,
-        ':restock' => '2025-10-20',
+        ':name' => 'name',
+        ':category' => 'category',
+        ':supplier' => 'supplier',
+        ':price' => 'price',
+        ':quantity' => 'quantity',
+        ':expiry' => 'expiry',
+        ':discount' => 'discount',
+        ':restock' => 'restock',
         ':id' => $item_id
     ]);
 
