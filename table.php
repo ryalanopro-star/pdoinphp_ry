@@ -1,7 +1,6 @@
 <?php
 include 'dbconfig.php';
 
-// Fetch all records
 $stmt = $conn->prepare("SELECT * FROM GroceryItems");
 $stmt->execute();
 $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
