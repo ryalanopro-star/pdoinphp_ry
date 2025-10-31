@@ -1,10 +1,9 @@
 <?php
 include 'dbconfig.php';
 
-$item_id = 0; // Change this to the item you want to update
+$item_id = 1; // Change this to the item you want to update
 
 try {
-    // Prepare UPDATE statement
     $stmt = $conn->prepare("UPDATE GroceryItems SET 
         item_name = :name, 
         category = :category, 
@@ -16,16 +15,15 @@ try {
         last_restock_date = :restock 
         WHERE item_id = :id");
 
-    // Execute update (change values as needed)
     $stmt->execute([
-        ':name' => 'Updated Item',
-        ':category' => 'N/A',
-        ':supplier' => 'N/A',
-        ':price' => 0,
-        ':quantity' => 0,
-        ':expiry' => 'N/A',
+        ':name' => 'Green Apple',
+        ':category' => 'Fruits',
+        ':supplier' => 'Fruit Nest',
+        ':price' => 38.00,
+        ':quantity' => 100,
+        ':expiry' => '2025-11-30',
         ':discount' => 0.00,
-        ':restock' => 'N/A',
+        ':restock' => '2025-10-20',
         ':id' => $item_id
     ]);
 
@@ -139,4 +137,3 @@ try {
     <?php endif; ?>
 </body>
 </html>
-
